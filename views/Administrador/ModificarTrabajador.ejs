@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Modificar Trabajador</title>
+</head>
+
+<body class="bg-light">
+    <%-include('../Headers/HeaderAdministrador');%>
+
+    <div class="container mt-4">
+        <!-- Contenedor para el titulo de la pagina -->
+        <div class="row mb-2">
+            <div class="col">
+                <h3>Modificar Trabajador</h3>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div id="liveAlertPlaceholder"></div>
+        </div>
+    
+        <!-- Contenedor para verificar si existe el trabajador -->
+        <%-include('Formularios/FormularioVerificador');%>
+    
+        <!-- Contenedor para modificar al trabajador -->
+        <div class="container" id="ContenedorModificador" style="display: none;">
+            <%-include('Formularios/FormularioModificarTrabajador');%>
+    
+            <%-include('Formularios/FormularioModificarPassword');%>
+    
+            <%-include('Formularios/FormularioSecciones');%>
+    
+            <%-include('Formularios/FormularioAdministrador');%>
+    
+            <!-- Seccion Botones-->
+            <div class="container bg-white border rounded p-3 mb-5">
+                <div class="row">
+                    <div class="col-12 col-sm-3 m-1">
+                        <button type="button" class="btn btn-success" id="btn_modificar">Modificar</button>
+                    </div>
+                    <div class="col-12 col-sm-3 m-1">
+                        <button type="button" class="btn btn-danger" id="btn_eliminar">Eliminar</button>
+                    </div>
+                    <div class="col-12 col-sm-3 m-1">
+                        <button type="button" class="btn btn-primary" id="btn_cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+</body>
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="/ModificarTrabajador/main.js" type="module"></script>
+
+</html>

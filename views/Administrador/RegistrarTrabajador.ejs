@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Registrar Trabajador</title>
+</head>
+
+<body class="bg-light">
+    <!-- Seccion de Header -->
+    <%-include('../Headers/HeaderAdministrador');%>
+    
+    <div class="container mt-4">
+        <!-- Seccion de Titulo -->
+        <div class="row mb-2">
+            <div class="col">
+                <h3> Registro del Trabajador </h3>
+            </div>
+        </div>
+
+        <div class="row mb-1">
+            <div id="liveAlertPlaceholder"></div>
+        </div>
+    
+        <!-- Seccion para los datos del Trabajador -->
+        <%-include('Formularios/FormularioDatosTrabajador');%>
+    
+        <!-- Seccion para seleccionar las secciones del trabajador -->
+        <%-include('Formularios/FormularioSecciones');%>
+    
+        <!-- Seccionar para el formulario Administrador -->
+        <%-include('Formularios/FormularioAdministrador');%>
+    
+        <!-- Seccion Botones -->
+        <div class="container bg-white border rounded p-3 mb-4">
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary col-3 col-md-2" id="btn_enviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/RegistrarTrabajador/main.js" type="module"></script>
+
+</html>

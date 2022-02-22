@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/Login/style.css">
+  <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin" style="background-color: rgba(240, 239, 239, 0.582); border-radius: 5px;">
+    <form method="POST" action="/login">
+      <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="Matricula" placeholder="123456789" name="Matricula">
+        <label for="Matricula">Matricula</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="Password" placeholder="Contraseña" name="Password">
+        <label for="Password">Contraseña</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" id="btn_entrar">Entrar</button>
+    </form>
+  </main>
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

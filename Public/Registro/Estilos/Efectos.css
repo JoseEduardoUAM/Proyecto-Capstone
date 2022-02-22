@@ -1,9 +1,0 @@
-#Btn_Almacenado:hover , #Btn_Visualizador:hover, button:hover{
-    background-color: #58667a;
-}
-
-input:focus{
-    outline: none;
-    background: none;
-    border-bottom: 4px solid #333F50;
-}

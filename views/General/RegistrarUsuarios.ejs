@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Registrar Usuarios</title>
+</head>
+
+<body class="bg-light">
+    <%-include('../Headers/HeaderGeneral');%>
+    <!-- Contenido -->
+    <div class="container mt-4 mb-5">
+        <!-- Contenedor para el titulo de la pagina -->
+        <div class="row mb-2">
+            <div class="col">
+                <h3>Registro de Usuarios</h3>
+            </div>
+        </div>
+        <!-- Seccion Alertas -->
+        <div class="row mb-1">
+            <div id="liveAlertPlaceholder"></div>
+        </div>
+    
+        <!-- Formulario para datos del Paciente -->
+        <div class="container bg-white p-3 border rounded mb-3">
+            <!-- Titulo del Formulario -->
+            <div class="row">
+                <div class="col">
+                    <h5> Datos del Paciente </h5>
+                </div>
+            </div>
+            <!-- Inputs del Formulario -->
+            <div class="row">
+                <div class="col-sm-12 col-lg-4">
+                    <label for="NombrePaciente" class="form-label">Nombre del Paciente:</label>
+                    <input type="text" class="form-control" id="NombrePaciente">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <label for="Apellido1Paciente" class="form-label">Primer Apellido del Paciente:</label>
+                    <input type="text" class="form-control" id="Apellido1Paciente">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <label for="Apellido2Paciente" class="form-label">Segundo Apellido del Paciente:</label>
+                    <input type="text" class="form-control" id="Apellido2Paciente">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <label for="NSS" class="form-label">Número de Seguro Social:</label>
+                    <input type="text" class="form-control" id="NSS">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <label for="Nacimiento" class="form-label">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control" id="Nacimiento">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Seccion para formularios de visitantes -->
+        <div class="container" id="FormulariosVisitantes">
+            <!-- Seccion para el formulario Visitante -->
+            <div class="container bg-white p-3 border rounded mb-3">
+                <!-- Titulo del Formulario -->
+                <div class="row">
+                    <div class="col">
+                        <h5> Datos del Visitante </h5>
+                    </div>
+                </div>
+                <!-- Inputs del Formulario -->
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4">
+                        <label for="NombreVisitante" class="form-label">Nombre del Visitante:</label>
+                        <input type="text" class="form-control" id="NombreVisitante">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <label for="Apellido1Visitante" class="form-label">Primer Apellido del Visitante:</label>
+                        <input type="text" class="form-control" id="Apellido1Visitante">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <label for="Apellido2Visitante" class="form-label">Segundo Apellido del Visitante:</label>
+                        <input type="text" class="form-control" id="Apellido2Visitante">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <label for="CURP" class="form-label">CURP del Visitante:</label>
+                        <input type="text" class="form-control" id="CURP">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Seccion de Botones -->
+        <div class="container bg-white border rounded p-3 mb-5">
+            <div class="row">
+                <div class="col-12 col-sm-3 m-1">
+                    <button type="button" class="btn btn-success" id="btn_registrar">Registrar Usuarios</button>
+                </div>
+                <div class="col-12 col-sm-3 m-1">
+                    <button type="button" class="btn btn-primary" id="btn_visitante">Agregar Visitante</button>
+                </div>
+                <div class="col-12 col-sm-3 m-1">
+                    <button type="button" class="btn btn-danger" id="btn_cancelar">Cancelar Registro</button>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/RegistrarUsuarios/main.js" type="module"></script>
+
+</html>
