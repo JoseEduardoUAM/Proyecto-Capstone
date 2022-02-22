@@ -55,4 +55,4 @@ app.post('/:id', funcion.mostrarSala);
 //Configuracion del Servidor https
 exports.server = https.createServer( certificado , app ).listen( puerto , () => {
     console.log( `\x1b[33m Servidor corriendo en el puerto ${puerto} \x1b[0m`);
-} );
+});
