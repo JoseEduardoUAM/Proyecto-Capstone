@@ -10,8 +10,7 @@ const { crearArchivoPDF } = require('../PDF/main');
 /*****************************************************************************************************/
 // Funcion que pemrite mostrar la pagina de Registro
 exports.mostrarRegistro = function (req, res) {
-    let dato = req.body;
-    if (dato.codigo == codeServer) {
+    if (req.body.codigo == codeServer) {
         res.sendFile(path.join(process.cwd(), 'Public', 'Registro', 'index.html'));
     } else {
         res.send("acceso denegado");
@@ -19,8 +18,7 @@ exports.mostrarRegistro = function (req, res) {
 }
 // Funcion que permite mostrar la pagina Entarda
 exports.mostrarEntrada = function (req, res) {
-    let dato = req.body;
-    if (dato.codigo == codeServer) {
+    if (req.body.codigo == codeServer) {
         res.sendFile(path.join(process.cwd(), 'Public', 'Entrada', 'index.html'));
     } else {
         res.send("acceso denegado");
@@ -28,8 +26,7 @@ exports.mostrarEntrada = function (req, res) {
 }
 // Funcion que permite mostrar la pagina Salida
 exports.mostrarSalida = function (req, res) {
-    let dato = req.body;
-    if (dato.codigo == codeServer) {
+    if (req.body.codigo == codeServer) {
         res.sendFile(path.join(process.cwd(), 'Public', 'Salida', 'index.html'));
     } else {
         res.send("acceso denegado");
@@ -37,8 +34,7 @@ exports.mostrarSalida = function (req, res) {
 }
 // Funcion para mostrar la pagina del Visitante
 exports.mostrarVisitante = function (req, res) {
-    let dato = req.body;
-    if (dato.codigo == codeServer) {
+    if (req.body.codigo == codeServer) {
         res.sendFile(path.join(process.cwd(), 'Public', 'Visitante', 'index.html'));
     } else {
         res.send("acceso denegado");
@@ -46,8 +42,7 @@ exports.mostrarVisitante = function (req, res) {
 }
 // Funcion para mostrar la pagina de la sala de videollamada
 exports.mostrarPaciente = function (req, res) {
-    let dato = req.body;
-    if (dato.codigo == codeServer) {
+    if (req.body.codigo == codeServer) {
         res.sendFile(path.join(process.cwd(), 'Public', 'Paciente', 'index.html'));
     } else {
         res.send("acceso denegado");

@@ -37,7 +37,7 @@ netstat -tap | grep -i mysql
 ```
 mysql -u root -p
 SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
-GRANT ALL PRIVILEGES ON . TO 'root'@'192.168.109.133' IDENTIFIED BY 'password123' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.109.133' IDENTIFIED BY 'password123' WITH GRANT OPTION;
 ```
 # Importar base de datos
 ```

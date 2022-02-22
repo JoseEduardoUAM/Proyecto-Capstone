@@ -4,8 +4,7 @@ export function CrearFormulario( datos ){
 	document.body.appendChild(form);
 	form.method = 'post';
 	form.action = datos.url;
-
-	let d = [[ "nombreLocal" , datos.nombrePac ] , [ "nombreRemoto" , datos.nombreVis ] , [ "regreso" , datos.regreso ] , [ "url" , datos.url ] ];
+	let d = [[ "nombreLocal" , datos.nombreLocal ] , [ "nombreRemoto" , datos.nombreRemoto ] , [ "regreso" , datos.regreso ] , [ "url" , datos.url ] ];
 
 	for( let x of d ){
 		let input = document.createElement('input');

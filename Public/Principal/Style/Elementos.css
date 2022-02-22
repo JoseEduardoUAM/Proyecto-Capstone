@@ -7,36 +7,37 @@ label{
     top: 0px;
     left: 0px;
     color: #333F50;
-    font-size: 12px;
+    font-size: var(--font-size-titulo-label-arriba);
     font-weight: 520;
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
 }
 
 .titulo_label_abajo{
-    top: 24px;
-    left: 50px;
+    top: var(--top-label-titulo-label-abajo);
+    left: var(--left-label-titulo-label-abajo);
     color: #838383;
-    font-size: 16px;
+    font-size: var(--font-size-titulo-label-abajo);
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
 }
 
 .mensajeRestriccion{
-    top: 55px;
+    top: var(--mensaje-restriccion-top);
     left: 0px;
     font-size: 13px;
     color: #c04c29;
 }
 
 input{
-    margin-top: 20px;
+    margin-top: var(--input-margin-top);
     width: 90%;
-    height: 20px;
-    padding: 1% 4% 1% 4%;
+    height: var(--input-heigth);
+    padding: var(--input-padding);
     box-sizing: content-box;
     border: 0px;
     border-bottom: 1px solid #333F50;
+    font-size: var(--input-font-size);
 }
 
 #seccion{
@@ -45,9 +46,10 @@ input{
     color: aliceblue;
     border: none;
     border-radius: 10px;
-    height: 30px;
+    height: var(--seccion-heigth);
     text-align: center;
-    margin-top: 18px;
+    margin-top: var(--seccion-margin-top);
+    font-size: var(--seccion-font-size);
 }
 
 #ingresar{
@@ -58,7 +60,7 @@ input{
     margin: auto;
     border-radius: 5px;
     border: none;
-    font-size: 20px;
+    font-size: var(--button-ingresar-font-size);
 }
 
 #mensanje{
