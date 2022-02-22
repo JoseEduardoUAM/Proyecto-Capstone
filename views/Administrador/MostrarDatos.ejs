@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Datos Visitantes</title>
+</head>
+<body class="bg-light">
+    <%-include('../Headers/HeaderAdministrador');%>
+    <main class="container">
+        <table id="Tabla">
+            <thead>
+                <tr id="TituloColumnas">
+                    <% Object.keys(Tabla[0]).forEach(function(titulo){ %>
+                        <td> <%-titulo%> </td>
+                    <%})%>
+                </tr>
+            </thead>
+            <tbody id="SeccionRegistros">
+                <% Tabla.forEach(function( registro ){ %>
+                    <tr>
+                        <% Object.keys(registro).forEach(function( key ){ %>
+                            <%if( key == "Fecha" ){ %>
+                                <td> <%- registro[key].getDate() + "-" + (registro[key].getMonth()+1) + "-" + registro[key].getFullYear()%> </td>
+                            <%} else{%>
+                                <td> <%-registro[key]%> </td>
+                            <%}%>
+                        <%})%>
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </main>
+</body>
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/simple-datatables/dist/umd/simple-datatables.js" type="text/javascript"></script>
+
+<script>
+    const table = new simpleDatatables.DataTable("#Tabla");
+</script>
+
+</html>

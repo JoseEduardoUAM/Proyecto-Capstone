@@ -1,0 +1,22 @@
+<% if(mensaje){ %>
+    <% if(alert){ %>
+      <script>
+      Swal.fire({
+        icon: 'success',
+        title: '<%=title%>',
+        showConfirmButton: false,
+        timer: 2000
+      }).then(() => {
+        window.location.replace('<%=url%>');
+      })
+    </script>
+    <% }else{ %>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: '<%=title%>',
+          showConfirmButton: true
+        })
+      </script>
+    <% }%>
+<% }%>

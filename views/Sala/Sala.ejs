@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala</title>
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #ContenedorBotones{
+            background-color: rgb(63, 63, 63)
+        }
+        #ContenedorVideoLocal{
+            width: 200px; 
+            height: 110px; 
+            background-color: rgba(0, 0, 0, 0.445); 
+            top:10px; right: 10px;
+        }
+        #ContenedorVideos{
+            height: 90%;
+        }
+        .SeccionVideo{
+            width: 100%;
+            height: 100%;
+        }
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        /*Para pantallas mayores a 850px*/
+        @media screen and ( min-width : 850px ){
+            #ContenedorBotones{
+                width: 70%;
+            }
+        }
+        /*Para pantallas menores a 850pc*/
+        @media screen and ( max-width : 850px ){
+            #ContenedorBotones{
+                width: 100%;
+            }
+            #ContenedorVideoLocal{
+                width: 140px;
+                height: 90px; 
+            }
+        }
+        /*Para pantallas menores a 850 y en forma horizontal*/
+        @media screen and ( max-width : 850px ) and (orientation: landscape){
+            #ContenedorBotones{
+                width: 100%;
+            }
+            #ContenedorVideoLocal{
+                width: 140px;
+                height: 90px; 
+            }
+            #ContenedorVideos{
+            height: 80%;
+        }
+        }
+    </style>
+
+</head>
+
+<body class="bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Seccion de Video -->
+            <div class="col" id="SeccionVideo" style="height: 100vh;">
+                <!-- Contenedor de Video -->
+                <div class="row align-items-center justify-content-center" id="ContenedorVideos">
+                    <div class="position-relative" style="width: 80%; height: 90%; background-color: rgb(63, 63, 63);">
+                        <!-- Contenedor Local -->
+                        <div class="position-absolute rounded" id="ContenedorVideoLocal">
+                            <div class="SeccionVideo">
+                                <video playsinline autoplay muted id="video-local" poster="/Sala/Imagenes/Usuario_No_Definido.png"></video>
+                            </div>
+                        </div>
+                        <!-- Contenedor Remoto -->
+                        <div class="SeccionVideo">
+                            <video playsinline autoplay id="video-remoto" poster="/Sala/Imagenes/Usuario_No_Definido.png"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly p-2 m-auto rounded" id="ContenedorBotones">
+                    <button type="button" class="btn btn-secondary" id="btn_configuracion">Configuración</button>
+                    <button type="button" class="btn btn-danger" id="btn_finalizar">Finalizar</button>
+                    <button type="button" class="btn btn-success" id="btn_mensajes">Mensajes</button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3 bg-white" id="SeccionMensajes" style="display: none; height: 100vh;">
+                <div id="Mensajes"></div>
+				<div id="ContenedorEscritura">
+                    <input type="text" name="entrada-mensaje" id="entrada-mensaje" required autocomplete="off">
+                    <label for="entrada-mensaje">Escribe el mensaje</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<%-include('conexionwebrtc');%>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Entrada</title>
+</head>
+
+<body class="bg-light">
+    <%-include('../Headers/HeaderGeneral');%>
+
+    <div class="container bg-white border rounded p-3 mt-2">
+        <div class="row text-center">
+            <div class="col">
+                Disponibilidad: <p class="fw-light fs-5" id="NumeroPersonas">0 personas</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div id="video-container" class="col-8">
+                <video id="qr-video" style="width: 100%;"></video>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <select id="cam-list" class="form-select form-select-sm">
+                    <option value="environment" selected>Environment Facing (default)</option>
+                    <option value="user">User Facing</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="/Entrada/main.js" type="module"></script>
+
+</html>

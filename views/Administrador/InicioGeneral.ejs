@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Inicio</title>
+</head>
+<body class="bg-light">
+    <!-- Seccion de Header -->
+    <%-include('../Headers/HeaderGeneral');%>
+
+    <!-- Seccion del contenido -->
+    <main class="container">
+        <!-- Seccion de Avisos -->
+        <div class="d-flex align-items-center p-2 my-3 text-white rounded shadow-sm"
+            style="background-color: rgb(77, 77, 77);">
+            <div class="1h-1">
+                <h1 class="h6 mb-0 text-white lh-1">Avisos</h1>
+                <small><%=Fecha%></small>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <% Avisos.forEach(function(aviso){ %>
+                <div class="d-flex text-muted pt-3">
+                    <p class="pb-3 mb-0 small lh-sm border-bottom">
+                        <strong class="d-block text-gray-dark"> <%-aviso.Nombre%> </strong>
+                        <%-aviso.Descripcion%>
+                    </p>
+                </div>
+            <%})%>
+        </div>
+    </main>
+    
+</body>
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+</html>

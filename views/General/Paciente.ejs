@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/simple-datatables/dist/style.css" rel="stylesheet">
+    <title>Paciente</title>
+</head>
+
+<body class="bg-light">
+    <%-include('../Headers/HeaderGeneral');%>
+
+    <div class="container mt-3">
+        <div class="row" id="contenedor">
+        </div>
+    </div>
+
+    <form method="post" style="display: none;" id="datosSala">
+        <input type="text" name="url">
+        <input type="text" name="tipo" value="Paciente">
+    </form>
+
+</body>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="/Paciente/main.js" type="module"></script>
+
+</html>
