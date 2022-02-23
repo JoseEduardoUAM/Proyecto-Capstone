@@ -1,5 +1,4 @@
 <script type="module">
-//import { io } from "/socket.io/client-dist/socket.io.esm.min.js"
   
   //Identificadores de elementos HTML
   const mensajes = document.getElementById('Mensajes');
@@ -89,7 +88,7 @@ const iniciarConexion = (stream) => {
     canalLocal = conexionLocal.createDataChannel('chat_channel');
 
     // Llamada a función que recibe un mensaje en el canal
-    canalLocal.onmessage = (event) => registrarMensaje(`${event.data}`,"familiarMensaje", `${familiarNombre.value}`);
+    canalLocal.onmessage = (event) => registrarMensaje(`${event.data}`,"familiarMensaje", `${familiarNombre}`);
     // Function Called When Channel is Opened
     canalLocal.onopen = (event) => registrarAviso("Canal Abierto","SistemaAbierto");
     // Function Called When Channel is Closed
@@ -128,7 +127,7 @@ const iniciarConexion = (stream) => {
       canalRemoto = channel;
 
       // Llamada a funcion que recibe un mensaje en el canal
-      canalRemoto.onmessage = (event) => registrarMensaje(`${event.data}`,"familiarMensaje", `${familiarNombre.value}`);
+      canalRemoto.onmessage = (event) => registrarMensaje(`${event.data}`,"familiarMensaje", `${familiarNombre}`);
       // Función llamada cuando se abre el canal
       canalRemoto.onopen = (event) => registrarAviso("Canal Abierto","SistemaAbierto");
       // Función llamada cuando el canal está cerrado
@@ -167,7 +166,7 @@ const iniciarConexion = (stream) => {
       // Limpiar entrada
       entradaMensaje.value = '';
       // Mensaje de registro como enviado
-      registrarMensaje(`${message}`,"miMensaje", `${miNombre.value}`);
+      registrarMensaje(`${message}`,"miMensaje", `${miNombre}`);
 
       // GET el canal (puede ser local o remoto)
       const channel = canalLocal || canalRemoto;

@@ -224,6 +224,21 @@ exports.ObtenerDatosPaciente = async ( IdPac ) => {
     }
 }
 
+exports.VerificarPacienteFecha = async ( NSS , Fecha ) => {
+    try {
+        let conn = await getConnectionUsuarios()
+        let result = await conn.query( sqlUsuario.VerificarPacienteFecha , [ NSS , Fecha ] )
+        conn.end()
+        if( result.length != 1 )
+            throw 'La fecha de Nacimiento no es correcto'
+        return { IdPac : result[0].IdPac }
+    } catch (error) {
+        if( error.code )
+            return { errorVerPac : `Hay un Error de tipo : ${error.code}` }
+        return { errorVerPac : error }
+    }
+}
+
 function GenerarCodigo(){
     var result, i, j;
     result = '';

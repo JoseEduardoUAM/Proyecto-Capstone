@@ -123,13 +123,20 @@ io.on('connection' , (socket) => {
     })
 
     socket.on( 'EntrarSalaFecha' , async ( Fecha , NSS , url ) => {
-        let usuarios = io.sockets.adapter.rooms.get(url)
-        let numUsuarios = usuarios ? usuarios.size : 0
-        if( numUsuarios < 2 ){
-			socket.emit( 'respuestaServidorEntrada' , { error : false , url : url } )
-		}else{
-			socket.emit( 'respuestaServidorEntrada' , { error : true , msg : 'La sala ya esta llena' } )
-		}
+        try {
+            let usuarios = io.sockets.adapter.rooms.get(url)
+            let numUsuarios = usuarios ? usuarios.size : 0
+            if( numUsuarios >= 2 )
+                socket.emit( 'respuestaServidorEntrada' , { error : true , msg : 'La sala ya esta llena' } )
+            let { IdPac , errorVerPac } = await ConsultasUsuario.VerificarPacienteFecha( NSS , Fecha )
+            if( errorVerPac )
+                throw errorVerPac
+            if( !IdPac )
+                throw 'La sala o la Fecha de nacimiento son incorrectos'
+            socket.emit( 'respuestaServidorEntrada' , { error : false , url : url } )
+        } catch (error) {
+            socket.emit( 'respuestaServidorEntrada' , { error : true , msg : error } )
+        }
     })
 
 	/****************Eventos para la Sala*******************************/
