@@ -49,3 +49,5 @@ exports.VerificarValorFechaSalida = `SELECT Salida FROM Asistencia WHERE IdAsis 
 exports.RegistrarSalida = `UPDATE Asistencia Set Salida = ? WHERE IdAsis = ?`
 
 exports.ObtenerDatosPaciente = `SELECT Nombre , Apellido1 , Apellido2 , NSS FROM Paciente WHERE IdPac = ?`
+
+exports.VerificarPacienteFecha = ` SELECT IdPac FROM Paciente WHERE NSS = ? AND FechaNacimiento = ?`
