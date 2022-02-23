@@ -29,6 +29,51 @@
             height: 100%;
             object-fit: contain;
         }
+        .SistemaAbierto{
+        background-color: #379461f8;
+        color: aliceblue;
+        }
+
+        .SistemaCerrado{
+        background-color: #b82b2bf8;
+        color: aliceblue;
+        }
+        .NombreMensaje{
+        font-size: 50%;
+        color: #a3a3a3;
+        width: 90%;
+        margin: 2% 5% 0% 5%;
+        }
+
+        .DatoMensaje{
+        color: aliceblue;
+        width: 90%;
+        margin: 0% 5% 2% 5%;
+        text-align: justify;
+        }
+        .ContenedorMsg{
+        display: inline-block;
+        width: 80%;
+        border-radius: 5px;
+        margin-top: 2%;
+        }
+        .miMensaje{
+        background-color: rgba(23, 54, 119, 0.801);
+        margin-left: 15%;
+        }
+
+        .familiarMensaje{
+        background-color: rgba(66, 88, 138, 0.801);
+        margin-left: 5%;
+        }
+
+        .ContenedorAviso{
+        display: inline-block;
+        width: 40%;
+        border-radius: 5px;
+        margin: 2% 30% 0% 30%;
+        text-align: center;
+        }
         /*Para pantallas mayores a 850px*/
         @media screen and ( min-width : 850px ){
             #ContenedorBotones{
@@ -88,11 +133,11 @@
                     <button type="button" class="btn btn-success" id="btn_mensajes">Mensajes</button>
                 </div>
             </div>
-            <div class="col-12 col-lg-3 bg-white" id="SeccionMensajes" style="display: none; height: 100vh;">
+            <div class="col-12 col-lg-3 bg-white position-relative" id="SeccionMensajes" style="display: none; height: 100vh;">
                 <div id="Mensajes"></div>
-				<div id="ContenedorEscritura">
-                    <input type="text" name="entrada-mensaje" id="entrada-mensaje" required autocomplete="off">
-                    <label for="entrada-mensaje">Escribe el mensaje</label>
+				<div id="ContenedorEscritura" class="position-absolute bottom-0">
+                    <label for="entrada-mensaje" class="form-label">Escribe el mensaje</label>
+                    <input type="text" name="entrada-mensaje" id="entrada-mensaje" autocomplete="off" class="form-control">
                 </div>
             </div>
         </div>
