@@ -13,7 +13,7 @@ app.use( express.json() )
 app.use( express.urlencoded({extended:true}) )
 app.use( cookieParser() );
 
-app.use( express.static( path.join( process.cwd() , 'public' ) ) )
+app.use( express.static( path.join( process.cwd() , 'Public' ) ) )
 app.use( '/sweetalert2/' , express.static( path.join( process.cwd() , "node_modules" , "sweetalert2" , "dist" ) ) )
 app.use( '/simple-datatables/' , express.static( path.join( process.cwd() , "node_modules" , "simple-datatables" ) ) )
 app.use( '/qr-scanner/' , express.static( path.join( process.cwd() , "node_modules" , "qr-scanner" ) ) )

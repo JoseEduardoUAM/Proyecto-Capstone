@@ -3,7 +3,7 @@ exports.RegistroEntradas = `
 SELECT IdPar_NomVis.Nombre , Asistencia.Entrada , Asistencia.Salida , Asistencia.Fecha 
 FROM Asistencia , ((SELECT Id_Vis_Par.IdPar , Visitante.Nombre 
     FROM Visitante , ((SELECT IdPar , IdVis 
-        FROM parentesco) as Id_Vis_Par) 
+        FROM Parentesco) as Id_Vis_Par) 
     WHERE Id_Vis_Par.IdVis = Visitante.IdVis) as IdPar_NomVis) 
 WHERE IdPar_NomVis.IdPar = Asistencia.IdPar
 `
