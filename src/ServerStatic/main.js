@@ -1,5 +1,5 @@
 // Dependencias
-const { express , path , cookieParser } = require('../dependencias')
+const { express , path , cookieParser , fs } = require('../dependencias')
 
 // Utilizando Dependencias
 const app = express()
@@ -29,6 +29,9 @@ app.use( '/' , require('./Login/POST_Main') )
 app.use( '/' , require('./Administrador/POST_Administrador') )
 app.use( '/' , require('./General/POST_Paginas') )
 
-exports.server = require('http').createServer( app ).listen( app.get('port') , ()=> {
+exports.server = require('https').createServer( {
+    cert : fs.readFileSync( path.join( process.cwd() , 'Certificados' , 'cert.pem' ) ) ,
+    key : fs.readFileSync( path.join( process.cwd() , 'Certificados' , 'key.pem' ) )
+} , app ).listen( app.get('port') , ()=> {
     console.log( `\x1b[33m Servidor corriendo en el puerto ${app.get('port')} \x1b[0m` )
 })
